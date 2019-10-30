@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :tasks
+  # resouce 自身のプロフィールのようなアプリケーション上に一つしかないようなリソースをREST的にルーティング
+  # resouces 複数のルーティングを作成
 end
