@@ -15,6 +15,17 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
+  #editアクションを追加
+  def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    @task.update(task_params)
+    redirect_to tasks_path
+  end
+
   private
   #外部からメソッドの使用をできないようにする
 
