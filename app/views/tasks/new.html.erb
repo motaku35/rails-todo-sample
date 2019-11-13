@@ -1,7 +1,13 @@
 <h1>新規タスク</h1>
 <%= form_for(@task) do |f| %>
-  <div><%= f.label :title %></div>
-  <div><%= f.text_field :title %></div>
-  <div><%= f.submit %></div>
+  <!-- エラーメッセジの表示-->
+  <div class="error"><%= render 'shared/error_messages' %></div>
+
+  <!--　titleの中身の設定-->
+  <div><%= f.label :title, class: "control-label" %></div>
+  <div><%= f.text_field :title ,class: 'form-control'%></div>
+
+  <!-- createボタンの実装 -->
+  <div><%= f.submit "Create my task", class: "btn btn-primary"%></div>
 <% end %>
 <%= link_to '戻る', tasks_path %>

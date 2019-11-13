@@ -12,7 +12,11 @@ class TasksController < ApplicationController
   #taskを追加する時に使われる
   def create
     @task = Task.create(task_params)
-    redirect_to tasks_path
+    if @task.save
+      redirect_to tasks_path
+    else
+      render 'new'
+    end
   end
 
   #editアクションを追加
