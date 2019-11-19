@@ -1,7 +1,15 @@
 <h1>タスク編集</h1>
 <%= form_for(@task) do |f| %>
-  <div><%= f.label :title %></div>
-  <div><%= f.text_field :title %></div>
+
+  <div><%= f.label :title , class: "control-label"%></div>
+  <div><%= f.text_field :title , class: "form_control"%></div>
+
+  <div><%= f.label :start_date, class: "control-label" %></div>
+  <div><%= f.datetime_select :start_date, class: "form_control" %></div>
+
+  <div><%= f.label :end_date, class: "control-label" %></div>
+  <div><%= f.datetime_select :end_date, class: "form_control" %></div>
+
   <div><%= f.submit %></div>
 <% end %>
 <%= link_to '戻る', tasks_path %>

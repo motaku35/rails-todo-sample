@@ -3,11 +3,23 @@
   <!-- エラーメッセジの表示-->
   <div class="error"><%= render 'shared/error_messages' %></div>
 
+
   <!--　titleの中身の設定-->
   <div><%= f.label :title, class: "control-label" %></div>
   <div><%= f.text_field :title ,class: 'form-control'%></div>
 
+
+  <!-- 期日の設定 -->
+
+  <div><%= f.label :start_date, class: "control-label" %></div>
+  <div><%= f.datetime_select :start_date, class: "form_control" %></div>
+
+  <div><%= f.label :end_date, class: "control-label" %></div>
+  <div><%= f.datetime_select :end_date, class: "form_control" %></div>
+
   <!-- createボタンの実装 -->
   <div><%= f.submit "Create my task", class: "btn btn-primary"%></div>
 <% end %>
+
+
 <%= link_to '戻る', tasks_path %>
